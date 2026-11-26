@@ -1,0 +1,55 @@
+{
+  "name": "unofficial-instagram-mcp",
+  "version": "0.0.0",
+  "description": "Open-source MCP server for the Instagram API: publish Reels, photos and carousels, manage comments and DMs, and read insights. Multi-account. Runs locally (stdio) or self-hosted (HTTP).",
+  "license": "0BSD",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "unofficial-instagram-mcp": "dist/main.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "start": "node dist/main.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "instagram",
+    "instagram-api",
+    "typescript",
+    "claude",
+    "ai-agents",
+    "social-media",
+    "automation"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "pino": "^10.4.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.9",
+    "@jest/globals": "^30.5.2",
+    "@swc/core": "^1.16.22",
+    "@swc/jest": "^0.2.39",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.20.7",
+    "jest": "^30.5.2",
+    "typescript": "^7.0.2"
+  },
+  "packageManager": "pnpm@10.28.0"
+}
